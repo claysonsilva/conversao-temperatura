@@ -1,13 +1,6 @@
-FROM ubuntu
+FROM node:20.12.0-alpine3.19
 WORKDIR /home/aplicacao
 COPY . .
-RUN apt update -y && \
-    apt install curl -y && \
-    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
-ENV NVM_DIR="/root/.nvm" 
-RUN . "$NVM_DIR/nvm.sh" && \
-    . "$NVM_DIR/bash_completion" && \
-    nvm install 20 && \
-    npm install
-ENV PATH="/root/.nvm/versions/node/v20.12.0/bin/:$PATH"
+RUN npm install
+EXPOSE 8080
 ENTRYPOINT [ "node", "server.js" ]
