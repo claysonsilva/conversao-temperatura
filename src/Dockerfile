@@ -10,9 +10,9 @@ RUN echo "listando diretório root" && \
     ls -la /root/.nvm/ && \
     echo "Conteudo da variavel HOME 1: $HOME"
 ENV NVM_DIR=$HOME/.nvm 
-RUN echo "Conteudo da variavel HOME 2: $HOME" && \
-    . "$NVM_DIR"/nvm.sh && \
-    . "$NVM_DIR"/bash_completion && \
+RUN echo "Conteudo da variavel NVM_DIR 2: $NVM_DIR" && \
+    . "$NVM_DIR/nvm.sh" && \
+    . "$NVM_DIR/bash_completion" && \
     nvm install 20 && \
     npm install package.json
 ENTRYPOINT [ "node", "server.js" ]
