@@ -10,5 +10,6 @@ RUN . "$NVM_DIR/nvm.sh" && \
     nvm install 20 && \
     echo "INSTALANDO DEPENDENCIAS" && \
     npm install && \
-    node -v
+    node -v && \
+    which node
 ENTRYPOINT [ "node", "server.js" ]
