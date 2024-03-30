@@ -8,9 +8,9 @@ RUN echo "listando diretório root" && \
     ls -la /root && \
     echo "listando diretório nvm" && \
     ls -la /root/.nvm/ && \
-    echo "Conteudo da variavel HOME: $HOME"
+    echo "Conteudo da variavel HOME 1: $HOME"
 ENV NVM_DIR=$HOME/.nvm 
-RUN echo "Conteudo da variavel HOME: $HOME" && \
+RUN echo "Conteudo da variavel HOME 2: $HOME" && \
     . $NVM_DIR/nvm.sh && \
     . $NVM_DIR/bash_completion && \
     nvm install 20 && \
