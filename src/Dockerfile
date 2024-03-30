@@ -8,9 +8,6 @@ ENV NVM_DIR="/root/.nvm"
 RUN . "$NVM_DIR/nvm.sh" && \
     . "$NVM_DIR/bash_completion" && \
     nvm install 20 && \
-    echo "INSTALANDO DEPENDENCIAS" && \
-    npm install && \
-    node -v && \
-    which node
+    npm install
 ENV PATH="/root/.nvm/versions/node/v20.12.0/bin/:$PATH"
 ENTRYPOINT [ "node", "server.js" ]
