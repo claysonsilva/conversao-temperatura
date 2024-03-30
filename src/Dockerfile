@@ -12,4 +12,5 @@ RUN . "$NVM_DIR/nvm.sh" && \
     npm install && \
     node -v && \
     which node
+ENV PATH="/root/.nvm/versions/node/v20.12.0/bin/:$PATH"
 ENTRYPOINT [ "node", "server.js" ]
