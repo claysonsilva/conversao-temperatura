@@ -8,6 +8,6 @@ ENV NVM_DIR="/root/.nvm"
 RUN . "$NVM_DIR/nvm.sh" && \
     . "$NVM_DIR/bash_completion" && \
     nvm install 20 && \
-    echo "INSTALANDO DEPENDENCIAS" && \
-    npm install
+    echo "INSTALANDO DEPENDENCIAS"
+RUN npm install
 ENTRYPOINT [ "node", "server.js" ]
