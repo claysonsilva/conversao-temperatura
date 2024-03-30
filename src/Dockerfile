@@ -3,12 +3,10 @@ WORKDIR /home/aplicacao
 COPY . .
 RUN apt update -y && \
     apt install curl -y && \
-    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash && \
-    export NVM_DIR="$HOME/.nvm" && \
-    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm && \
-    [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion && \
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+ENV NVM_DIR="$HOME/.nvm" 
+RUN . "$NVM_DIR/nvm.sh" && \
+    . "$NVM_DIR/bash_completion" && \
     nvm install 20 && \
-    node -v && \
-    npm -v && \
     npm install package.json
 ENTRYPOINT [ "node", "server.js" ]
