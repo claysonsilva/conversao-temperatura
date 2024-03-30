@@ -9,7 +9,7 @@ RUN echo "listando diretório root" && \
     echo "listando diretório nvm" && \
     ls -la /root/.nvm/ && \
     echo "Conteudo da variavel HOME 1: $HOME"
-ENV NVM_DIR=$HOME/.nvm 
+ENV NVM_DIR="$HOME/.nvm" 
 RUN echo "Conteudo da variavel NVM_DIR 2: $NVM_DIR" && \
     . "$NVM_DIR/nvm.sh" && \
     . "$NVM_DIR/bash_completion" && \
