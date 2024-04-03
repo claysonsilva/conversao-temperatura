@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: meupod_metadata
+  labels:
+    name: meupod_label
+spec:
+  containers:
+  - name: meucontainer
+    image: claysilva/conversao-temperatura
+    resources:
+      limits:
+        memory: "128Mi"
+        cpu: "500m"
+    ports:
+      - containerPort: <Port>

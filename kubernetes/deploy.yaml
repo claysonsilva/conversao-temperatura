@@ -3,6 +3,7 @@ kind: Deployment
 metadata:
   name: conversao
 spec:
+  replicas: 5
   selector:
     matchLabels:
       app: conversao
